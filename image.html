@@ -1,34 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"
-        name="viewport"
-        content="width=device-width;
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width;
             initial-scale=1.0;
             minimum-scale=1.0;
             maximum-scale=1.0;
-            user-scalable=no"/>
-        <title>이벤트 리스너 속성에 자바스크립트 코드</title>
+            user-scalable=no" />
+    <title>이벤트 리스너 속성에 자바스크립트 코드</title>
 
-        <script src="lib.js">
-            </script>
-    </head>
-    <body>
+    <script src="lib.js">
+    </script>
+</head>
 
-        <h3>마우스를 올려보세요</h3>
-        <hr>
-        <a href="javascript:alert('클릭하셨습니다')">클릭해보세요</a>
-        <br><br>
-        <script>
-                document.write("<h3>Welcome!</h3>");
-                document.write("2 + 5 는 <br>");
-                document.write("<mark>7 입니다</mark>");
-        </script>
-        <br><br>
-        <img src="a.jpg" alt="이미지"
-        onmouseover="over(this)"
-        onmouseout="out(this)"
-        width="50%" height="60%">
+<body>
 
-    </body>
+    <h3>마우스를 올려보세요</h3>
+    <hr>
+    <a href="javascript:alert('클릭하셨습니다')">클릭해보세요</a>
+    <br><br>
+    <script>
+        var x = 100;
+        function f() {
+            x = 1;
+            document.write("지역변수 x=" + x);
+            document.write("<hr>");
+            document.write("전역변수 x=" + this.x);
+        }
+        f();
+        document.write("<h3>Welcome!</h3>");
+        document.write("2 + 5 는 <br>");
+        document.write("<mark>7 입니다</mark>");
+
+
+        document.write("<h2>" + "abc" + 23 + "<br>");
+        document.write(23 + "abc" + "<br>");
+        document.write(23 + "35" + "<br>");
+        document.write(23 + 35 + "<br>");
+        document.write(23 + 35 + "abc" + "<br>");
+        document.write("abe" + 23 + 35 + "<br><hr>");
+
+        var name = "kitae";
+        document.write(name == "kitae");
+        document.write("<br>");
+        document.write(name > "park" + "<br><hr>");
+        document.write("<br><hr>")
+
+
+
+        var grade;
+        var score = prompt("김재현 님 점수를 입력하세요", 100);
+        score = parseInt(score);
+        if (score >= 90) grade = "A";
+        else if (score >= 80) grade = "B";
+        else if (score >= 70) grade = "C";
+        else if (score >= 60) grade = "D";
+        else grade = "F";
+        document.write(score + "는 " + grade + "입니다.<hr>")
+
+
+        var price = 0;
+        var coffee = prompt("무슨 커피 드릴까요?", "");
+        switch (coffee) {
+            case "iceamericano":
+            case "아아":
+            case "아이스아메리카노": price = price + 1500;
+                break;
+            case "espresso":
+            case "에스프레소":
+                price = price + 2000;
+                break;
+            case "카푸치노":
+                price = price + 3000;
+                break;
+            case "카페라떼":
+                price = price + 4000;
+                break;
+        }
+        document.write(price + "원 입니다.");
+
+
+        document.write("<br><hr>");
+
+        for (var size = 10; size <= 35; size += 5) {
+            document.write("<span ");
+            document.write("style='font-size:" + size + "px'>");
+            document.writeln(size + "px");
+            document.write("</span>")
+        }
+        document.write("<br><hr>")
+
+        evalParseIntIsNaN();
+        document.write("<br><hr>")
+
+    </script>
+    <br><br>
+    
+    <img src="a.jpg" alt="이미지" onmouseover="over(this)" onmouseout="out(this)" width="50%" height="60%">
+
+</body>
+
 </html>
